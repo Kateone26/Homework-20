@@ -1,0 +1,134 @@
+body{
+    background-color:cadetblue;
+}
+
+.accordion{
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.accordion-title{
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    color:gainsboro;
+}
+.container{
+    position: relative;
+    background-color:darkcyan;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.accordion-title::before{
+    font-family: FontAwesome;
+    content: '\f107';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    font-size: 25px;
+}
+.accordion-description{
+    width: 100%;
+    font-size: 17px;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: justify;
+    transition: 0.5s linear;
+    color:gainsboro;
+}
+.accordion h2{
+    color:gainsboro;
+    font-size: 35px;
+    text-align: center;
+    padding: 20px;
+}
+
+.navbar-wrapper a{
+    color:dimgray;
+}
+.container.active .accordion-description{
+    height: 100px;
+}
+
+.container.active .accordion-title::before{
+    font-family: FontAwesome;
+    content: '\f106';
+    font-size: 25px;
+}
+
+
+
+/* navbar */
+
+
+
+
+.navbar-wrapper{
+    display: flex;
+    justify-content: space-between;
+    background-color:gainsboro;
+    position: relative;
+    padding: 20px;
+}
+ul{
+    display: flex;
+}
+li{
+    margin: 5px;
+}
+.toggle-button{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    display: none;
+    cursor: pointer;
+}
+
+
+
+.bar-1, .bar-2, .bar-3{
+    width: 30px;
+    height: 6px;
+    background-color:dimgray;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    transition: 0.5s linear;
+}
+
+@media(max-width: 768px){
+    .toggle-button{
+        display: block;
+    }
+    .navbar{
+        display: none;
+    }
+    .navbar-wrapper{
+        flex-direction: column;
+    }
+    ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar.activenav{
+        display: block;
+    }
+    .bar-2.removebar2{
+        display: none;
+    }
+    .bar-1.rotatebar1{
+        transform: rotate(45deg) translate(5px, 6px);
+        
+    }
+    .bar-3.rotatebar3{
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+}
+
+
+
